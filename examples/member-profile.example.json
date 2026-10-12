@@ -1,0 +1,31 @@
+{
+  "agent_id": "member-a",
+  "name": "小麦 A",
+  "budget_cents": 3500,
+  "max_pay_cents": 3500,
+  "fulfillment_key": "office-demo",
+  "context": {
+    "storeCode": "REPLACE_WITH_CURRENT_STORE_CODE",
+    "beCode": "REPLACE_WITH_CURRENT_BE_CODE",
+    "orderType": 1,
+    "beType": 1
+  },
+  "takeWayCode": "REPLACE_WITH_CURRENT_TAKE_WAY_CODE",
+  "history": { "shared": false },
+  "snapshot_ttl_ms": 180000,
+  "quote_ttl_ms": 120000,
+  "ledger_path": "work/member-a.private.json",
+  "options": [
+    {
+      "id": "choice-a",
+      "label": "主人愿意接受的配置 A",
+      "items": [
+        { "sku": "REPLACE_WITH_CURRENT_MENU_CODE", "quantity": 1 }
+      ]
+    }
+  ],
+  "selected_coupon_ids": [],
+  "coupon_rules": {},
+  "coupon_bindings": {},
+  "tool_args": {}
+}

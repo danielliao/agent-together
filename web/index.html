@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f4ee">
+  <meta name="description" content="让四个 Agent 带着各自需求与权益一起拼单，比价、确认、对账。">
+  <title>一起来麦 · Agent 带券，一起算账</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2716%27 fill=%27%23274237%27/%3E%3Ccircle cx=%2722%27 cy=%2722%27 r=%278%27 fill=%27%23e7f0bf%27/%3E%3Ccircle cx=%2742%27 cy=%2722%27 r=%278%27 fill=%27%23f4e5c4%27/%3E%3Ccircle cx=%2722%27 cy=%2742%27 r=%278%27 fill=%27%23dfab92%27/%3E%3Ccircle cx=%2742%27 cy=%2742%27 r=%278%27 fill=%27%23fffdf5%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="#" class="brand" aria-label="一起来麦"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></span><strong>一起来麦<small>AGENT TOGETHER</small></strong></a>
+    <nav class="header-nav"><button id="integration-button" class="quiet-button">如何连接真实 Agent <span aria-hidden="true">↗</span></button><span id="mode-badge" class="mode-badge"><span></span>虚构演示</span></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><div class="eyebrow"><span class="red-dot"></span>一顿饭，也可以是一次协作</div><h1>你的 Agent 带券，<br>我的 Agent 算账。</h1><p>各自选想吃的，各自带能用的权益。<br>让 Agent 找到一起点的好方案，主人确认后再出发。</p><div id="hero-count-note" class="hero-note"><span class="tiny-grid" aria-hidden="true">✣</span>从 4 份需求，到 1 张清楚的 AA 账单。</div></div>
+      <div class="table-illustration" aria-hidden="true"><span class="illustration-tag">LET’S EAT TOGETHER</span><div class="person person-a"><span>A</span><i>需求</i></div><div class="person person-b"><span>B</span><i>优惠券</i></div><div class="person person-c"><span>C</span><i>会员权益</i></div><div class="person person-d"><span>D</span><i>预算</i></div><div class="table-top"><span class="plate"><i></i><i></i><i></i></span><strong>同桌，不同账号。</strong><small>一起选 · 一起省 · 各自确认</small></div><span class="table-star">✷</span></div>
+    </section>
+    <section class="demo-banner"><div><span id="source-marker" class="source-marker">DEMO</span><p id="source-note"><strong>先看看四个 Agent 怎么配合。</strong>下方为虚构场景，不会创建真实订单或支付。</p></div><button id="reset-button" class="quiet-button">重置演示 <span aria-hidden="true">↻</span></button></section>
+    <section class="workbench">
+      <div class="workflow-nav" aria-label="拼单流程"><div class="workflow-step active" data-step="1"><span>01</span><div><strong>需求收集</strong><small>历史偏好 · 主人选择</small></div></div><i></i><div class="workflow-step" data-step="2"><span>02</span><div><strong>权益比价</strong><small>各自带券 · 同桌算账</small></div></div><i></i><div class="workflow-step" data-step="3"><span>03</span><div><strong>下单确认</strong><small>逐人同意 · 锁定方案</small></div></div><i></i><div class="workflow-step" data-step="4"><span>04</span><div><strong>AA 账单</strong><small>实际金额 · 对账回传</small></div></div></div>
+      <div class="section-heading"><div><span class="section-kicker">THE TABLE</span><h2>今天，谁一起吃？ <span id="participant-count">4 位 Agent</span></h2></div><div class="scenario-switch" aria-label="虚构演示场景"><button data-scenario="office" aria-pressed="true">办公室拼单</button><button data-scenario="expired" aria-pressed="false">券过期了</button><button data-scenario="budget" aria-pressed="false">有人超预算</button></div></div>
+      <div id="participant-grid" class="participant-grid" aria-live="polite"></div>
+      <div class="relay-bar"><div><div class="relay-icon" aria-hidden="true">⇄</div><p><strong id="relay-title">把需求和权益交给 Agent。</strong><span id="relay-description">先共享近期偏好，再收集本次需求，逐个账号比较可用权益。</span></p></div><button id="relay-button" class="primary-button">让 Agent 接力 <span aria-hidden="true">→</span></button></div>
+      <p class="history-disclaimer">近期历史只帮助推荐搭配，最终选什么、同不同意，始终由主人决定。</p>
+      <div id="status-message" class="status-message" role="status" aria-live="polite"></div>
+      <div class="result-layout">
+        <section class="plan-panel panel"><div class="panel-heading"><div><span class="section-kicker">THE PLAN</span><h2 id="plan-title">一桌的最优方案</h2></div><span id="quote-badge" class="small-badge">等待比价</span></div><div id="plan-content" class="plan-content"></div></section>
+        <section class="activity-panel panel"><div class="panel-heading"><div><span class="section-kicker">THE RELAY</span><h2>Agent 正在接力</h2></div><span id="event-count" class="event-count">0</span></div><ol id="event-list" class="event-list"></ol><p class="activity-footer">只展示协作进度，不展示凭证和完整订单。</p></section>
+      </div>
+      <section id="approval-section" class="approval-section panel" hidden><div class="panel-heading"><div><span class="section-kicker">YOUR CALL</span><h2>每一位主人，都要点头。</h2></div><span id="approval-count" class="small-badge">0 / 4 已确认</span></div><p id="split-policy" class="split-policy"></p><p id="approval-note" class="approval-note">这些按钮模拟四位主人分别同意，仅用于演示，不能代表真实成员授权。</p><div id="approval-grid" class="approval-grid"></div><div class="checkout-bar"><p id="checkout-note">方案、价格与分摊金额确认后，才进入下单。</p><button id="checkout-button" class="primary-button" disabled>模拟下单确认 <span aria-hidden="true">→</span></button></div></section>
+      <section id="bill-section" class="bill-section panel" hidden><div class="panel-heading"><div><span class="section-kicker">THE BILL</span><h2>吃在一起，账算明白。</h2></div><span id="bill-badge" class="small-badge">等待支付对账</span></div><div id="payment-content" class="payment-content"></div><div id="reconciliation-summary" class="reconciliation-summary" hidden></div><div id="bill-content" class="bill-content"></div><div class="bill-actions"><button id="reconcile-button" class="primary-button" hidden>按已核验实付重新提出分账 →</button><button id="settle-button" class="primary-button">模拟完成支付并对账 <span aria-hidden="true">✓</span></button><a id="export-button" class="secondary-button" href="/api/exports/bills" download hidden>下载 AA 账单 <span aria-hidden="true">↓</span></a></div><div id="outbox-content" class="outbox-content"></div></section>
+    </section>
+    <section class="integration-summary"><span aria-hidden="true">↗</span><div><h2>凭证留在各自电脑上，协作发生在同一张桌上。</h2><p>每位成员通过自己的 Agent sidecar 共享需求与可用权益。发起人不接收麦当劳 Token；尚未连接真实成员时，不允许真实下单。</p></div><button id="integration-button-bottom" class="quiet-button">看看怎么接入 →</button></section>
+  </main>
+  <footer class="site-footer"><span>一起来麦 · 非官方创意作品</span><span>你的选择，你的确认；共同的方案，清楚的账单。</span></footer>
+  <dialog id="integration-dialog" class="integration-dialog"><button id="close-dialog" class="dialog-close" aria-label="关闭">×</button><span class="section-kicker">CONNECT YOUR AGENTS</span><h2>一起吃，<br>先让各自的 Agent 到场。</h2><ol><li><strong>各自启动 Agent sidecar</strong><p>每个成员在自己的本机连接麦当劳 MCP，凭证仅保存在自己本机的内存中。</p></li><li><strong>分享最少必要的信息</strong><p>只共享近期偏好摘要、本次需求和可用权益，不分享完整订单、地址或 Token。</p></li><li><strong>主人亲自确认</strong><p>真实报价生成后，每位成员从自己的 Agent 确认同一版方案。成员未连接、未确认时，不允许真实下单。</p></li></ol><div class="dialog-note">当前页面是发起人视角。演示中的批准、下单和支付均为模拟，无法替代真实授权或付款。</div><div class="dialog-actions"><button id="show-session-form" class="secondary-button">发起真实拼单 →</button><button id="dialog-done" class="primary-button">先试演示 →</button></div>
+    <form id="session-form" class="session-form" hidden>
+      <h3>发起一张真实的桌。</h3><p>先填写共同门店与地点别名，再单独邀请各位主人。</p>
+      <div class="form-row"><label>门店编号<input id="store-input" required maxlength="100" autocomplete="off" placeholder="各成员使用同一门店"></label><label>取餐方式<select id="service-input"><option value="pickup">到店取餐</option><option value="delivery">麦乐送</option></select></label></div>
+      <label>共同地点别名<input id="fulfillment-input" required maxlength="100" autocomplete="off" placeholder="例如 office-lunch，不填完整地址"></label>
+      <label>成员清单 <small>每行：Agent 标识与姓名，共 2–8 位</small><textarea id="members-input" rows="4" required spellcheck="false">lin 小林
+zhou 阿周
+chen 小陈
+ding 阿丁</textarea></label>
+      <label>AA 方式<select id="split-input"><option value="proportional">订单优惠按餐费比例分享，配送均分</option><option value="equal">全单等额 AA</option></select></label>
+      <button id="create-session-button" class="primary-button" type="submit">创建真实拼单与个人邀请 →</button>
+      <p id="session-form-status" class="form-status" role="status" aria-live="polite"></p>
+    </form>
+    <section id="invite-section" class="invite-section" hidden><h3>每份邀请，只给对应的主人。</h3><p>邀请码可验证这位成员并确认方案，请单独交给本人，不要贴到群里。邀请不包含麦当劳 Token。</p><div id="invite-list"></div><button id="invite-done" class="primary-button">回到这一桌 →</button></section></dialog>
+  <script src="./app.js" defer></script>
+</body>
+</html>

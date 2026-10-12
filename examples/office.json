@@ -1,0 +1,282 @@
+{
+  "data_kind": "fictional",
+  "description": "完全虚构的四人办公室午餐演示。金额与权益均为测试数据，不代表麦当劳当前价格或真实用户账户。",
+  "id": "fictional-office-lunch",
+  "initiator_agent_id": "alice",
+  "store_id": "fictional-office-store",
+  "service_mode": "delivery",
+  "fulfillment_key": "fictional-2026-10-12-lunch",
+  "at": "2026-10-12T11:30:00+08:00",
+  "split_policy": "proportional",
+  "participants": [
+    {
+      "agent_id": "alice",
+      "name": "小林",
+      "budget_cents": 3200,
+      "options": [
+        {
+          "id": "alice-beef",
+          "label": "牛肉汉堡套餐",
+          "items": [
+            {
+              "sku": "fictional-beef-meal",
+              "name": "牛肉汉堡套餐",
+              "quantity": 1
+            }
+          ],
+          "price_cents": 1950
+        },
+        {
+          "id": "alice-chicken",
+          "label": "鸡肉汉堡套餐",
+          "items": [
+            {
+              "sku": "fictional-chicken-meal",
+              "name": "鸡肉汉堡套餐",
+              "quantity": 1
+            }
+          ],
+          "price_cents": 1850
+        }
+      ],
+      "account": {
+        "eligible_to_order": true,
+        "coupons": [],
+        "benefits": [],
+        "delivery_fee_cents": 500,
+        "context": {
+          "store_id": "fictional-office-store",
+          "service_mode": "delivery",
+          "fulfillment_key": "fictional-2026-10-12-lunch"
+        },
+        "snapshot_at": "2026-10-12T11:29:00+08:00",
+        "expires_at": "2026-10-12T11:40:00+08:00"
+      }
+    },
+    {
+      "agent_id": "bob",
+      "name": "阿周",
+      "budget_cents": 3000,
+      "options": [
+        {
+          "id": "bob-fish",
+          "label": "鱼肉汉堡套餐",
+          "items": [
+            {
+              "sku": "fictional-fish-meal",
+              "name": "鱼肉汉堡套餐",
+              "quantity": 1
+            }
+          ],
+          "price_cents": 1890
+        },
+        {
+          "id": "bob-double",
+          "label": "双层汉堡套餐",
+          "items": [
+            {
+              "sku": "fictional-double-meal",
+              "name": "双层汉堡套餐",
+              "quantity": 1
+            }
+          ],
+          "price_cents": 2090
+        }
+      ],
+      "account": {
+        "eligible_to_order": true,
+        "coupons": [
+          {
+            "id": "bob-private-coupon-alias",
+            "type": "fixed",
+            "known": true,
+            "amount_cents": 1800,
+            "min_food_cents": 8000,
+            "stackable": true,
+            "group": "bob-food-voucher",
+            "available_count": 1,
+            "expires_at": "2026-10-12T23:59:00+08:00",
+            "store_ids": [
+              "fictional-office-store"
+            ],
+            "service_modes": [
+              "delivery"
+            ],
+            "fulfillment_keys": [
+              "fictional-2026-10-12-lunch"
+            ],
+            "eligible_skus": "*",
+            "name": "阿周虚构满80减18",
+            "summary": "虚构演示：食品满80元减18元，可与明确允许的免配送权益叠加。"
+          }
+        ],
+        "benefits": [
+          {
+            "id": "bob-delivery-benefit",
+            "type": "delivery_waived",
+            "known": true,
+            "min_food_cents": 8000,
+            "stackable": true,
+            "group": "bob-delivery-card",
+            "available_count": 1,
+            "expires_at": "2026-10-12T23:59:00+08:00",
+            "store_ids": [
+              "fictional-office-store"
+            ],
+            "service_modes": [
+              "delivery"
+            ],
+            "fulfillment_keys": [
+              "fictional-2026-10-12-lunch"
+            ],
+            "eligible_skus": "*",
+            "name": "阿周虚构免配送",
+            "summary": "虚构演示：食品满80元免本单配送费，可与满减券叠加。"
+          }
+        ],
+        "delivery_fee_cents": 600,
+        "context": {
+          "store_id": "fictional-office-store",
+          "service_mode": "delivery",
+          "fulfillment_key": "fictional-2026-10-12-lunch"
+        },
+        "snapshot_at": "2026-10-12T11:29:00+08:00",
+        "expires_at": "2026-10-12T11:40:00+08:00"
+      }
+    },
+    {
+      "agent_id": "chen",
+      "name": "小陈",
+      "budget_cents": 3500,
+      "options": [
+        {
+          "id": "chen-wrap",
+          "label": "鸡肉卷套餐",
+          "items": [
+            {
+              "sku": "fictional-wrap-meal",
+              "name": "鸡肉卷套餐",
+              "quantity": 1
+            }
+          ],
+          "price_cents": 2590
+        },
+        {
+          "id": "chen-wing",
+          "label": "鸡翅套餐",
+          "items": [
+            {
+              "sku": "fictional-wing-meal",
+              "name": "鸡翅套餐",
+              "quantity": 1
+            }
+          ],
+          "price_cents": 2690
+        }
+      ],
+      "account": {
+        "eligible_to_order": true,
+        "coupons": [],
+        "benefits": [
+          {
+            "id": "chen-member-card",
+            "type": "percent",
+            "known": true,
+            "discount_bps": 1500,
+            "max_discount_cents": 900,
+            "stackable": false,
+            "available_count": 1,
+            "expires_at": "2026-10-12T23:59:00+08:00",
+            "store_ids": [
+              "fictional-office-store"
+            ],
+            "service_modes": [
+              "delivery"
+            ],
+            "fulfillment_keys": [
+              "fictional-2026-10-12-lunch"
+            ],
+            "eligible_skus": "*",
+            "name": "小陈虚构会员15%优惠",
+            "summary": "虚构演示：食品金额优惠15%，最多优惠9元，本单不与其他权益叠加。"
+          }
+        ],
+        "delivery_fee_cents": 500,
+        "context": {
+          "store_id": "fictional-office-store",
+          "service_mode": "delivery",
+          "fulfillment_key": "fictional-2026-10-12-lunch"
+        },
+        "snapshot_at": "2026-10-12T11:29:00+08:00",
+        "expires_at": "2026-10-12T11:40:00+08:00"
+      }
+    },
+    {
+      "agent_id": "ding",
+      "name": "阿丁",
+      "budget_cents": 3000,
+      "options": [
+        {
+          "id": "ding-nugget",
+          "label": "鸡块套餐",
+          "items": [
+            {
+              "sku": "fictional-nugget-meal",
+              "name": "鸡块套餐",
+              "quantity": 1
+            }
+          ],
+          "price_cents": 2190
+        },
+        {
+          "id": "ding-spicy",
+          "label": "香辣汉堡套餐",
+          "items": [
+            {
+              "sku": "fictional-spicy-meal",
+              "name": "香辣汉堡套餐",
+              "quantity": 1
+            }
+          ],
+          "price_cents": 2390
+        }
+      ],
+      "account": {
+        "eligible_to_order": true,
+        "coupons": [
+          {
+            "id": "ding-private-coupon-alias",
+            "type": "fixed",
+            "known": true,
+            "amount_cents": 600,
+            "min_food_cents": 7000,
+            "stackable": false,
+            "available_count": 1,
+            "expires_at": "2026-10-12T23:59:00+08:00",
+            "store_ids": [
+              "fictional-office-store"
+            ],
+            "service_modes": [
+              "delivery"
+            ],
+            "fulfillment_keys": [
+              "fictional-2026-10-12-lunch"
+            ],
+            "eligible_skus": "*",
+            "name": "阿丁虚构满70减6",
+            "summary": "虚构演示：食品满70元减6元，本单不与其他权益叠加。"
+          }
+        ],
+        "benefits": [],
+        "delivery_fee_cents": 500,
+        "context": {
+          "store_id": "fictional-office-store",
+          "service_mode": "delivery",
+          "fulfillment_key": "fictional-2026-10-12-lunch"
+        },
+        "snapshot_at": "2026-10-12T11:29:00+08:00",
+        "expires_at": "2026-10-12T11:40:00+08:00"
+      }
+    }
+  ]
+}
