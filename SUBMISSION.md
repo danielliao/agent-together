@@ -1,10 +1,12 @@
-# 一起来麦报名申请草稿
+# 一起来麦报名提交记录
 
 项目仓库：https://github.com/danielliao/agent-together
 
-状态：本项目单账号真实只读 MCP 验证已于 2026 年 10 月 12 日完成，官方报名帖正在提交。用户在前次报名已确认参赛资格并同意同一活动规则，本次明确授权「帮我报名」。
+报名申请：[官方活动 Issue #485](https://github.com/M-China/mcd-developer-innovation-challenge/issues/485)
 
-拟提交标题：`【参赛申请】一起来麦——你的 Agent 带券，我的 Agent 算账`
+提交账号：danielliao。提交时间：2026 年 10 月 12 日 10:37（北京时间）。状态：已提交，等待官方确认。本项目单账号真实只读 MCP 验证已于同日 10:28 完成；多人真实核价、创建与支付尚待联调。
+
+提交标题：`【参赛申请】一起来麦——你的 Agent 带券，我的 Agent 算账`
 
 ```text
 【参赛申请】
