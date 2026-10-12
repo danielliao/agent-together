@@ -1,6 +1,6 @@
 # 一起来麦 · agent-together
 
-项目仓库：https://github.com/danielliao/agent-together 。2026 年 10 月 12 日已完成本项目单账号真实只读验证，正在提交参赛申请；验证范围见 MCP_INTEGRATION.md，不把源码发布等同于报名确认。
+项目仓库：https://github.com/danielliao/agent-together 。2026 年 10 月 12 日已完成本项目单账号真实只读验证，并于 10:37（北京时间）提交[参赛申请 #485](https://github.com/M-China/mcd-developer-innovation-challenge/issues/485)，等待官方确认。验证范围见 [MCP_INTEGRATION.md](MCP_INTEGRATION.md)。
 
 **你的 Agent 带券，我的 Agent 算账。**
 
@@ -78,7 +78,7 @@ AA 到分 → 各成员自己的收件箱 → Agent 回执
 
 `src/` 包含优化、分账、历史去敏、MCP、成员 Agent、协调器和本机服务；`web/` 是发起人界面；`examples/` 只含虚构数据；`scripts/` 是运行入口；`tests/` 验证可观察行为和金额守恒。
 
-项目自写代码使用 MIT 许可证。麦当劳名称、商标和官方参赛声明保留原权利。本项目尚未声称完成多账号真实下单或比赛报名；真实工具验证范围见 [MCP_INTEGRATION.md](MCP_INTEGRATION.md)。
+项目自写代码使用 MIT 许可证。麦当劳名称、商标和官方参赛声明保留原权利。报名申请已提交，等待官方确认；多账号真实核价、下单与支付尚待联调，真实工具验证范围见 [MCP_INTEGRATION.md](MCP_INTEGRATION.md)。
 
 68 项自动测试通过，本机网页已验证四人接力、逐人确认、模拟支付、账单下载、券过期与预算不足，以及 390px 手机布局。自动检查包含四个独立成员运行时通过认证 HTTP 完成接力的端到端测试；MCP 响应使用合成 stub，不冒充真实多账号联调。另已完成本项目单账号真实只读 MCP 连接、近期历史摘要处理、卡券和积分查询，不公开账号内容。
 
