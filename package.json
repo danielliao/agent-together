@@ -2,5 +2,5 @@
   "name":"agent-together","version":"0.1.0","private":true,"type":"module",
   "description":"多位 Agent 带着各自的需求、近期偏好和账号权益，选出合适的下单账号，再精确 AA。",
   "engines":{"node":">=22"},
-  "scripts":{"start":"node scripts/serve.mjs","demo":"node scripts/demo.mjs","member":"node scripts/member.mjs","test":"node --test tests/*.test.mjs"}
+  "scripts":{"start":"node scripts/serve.mjs","demo":"node scripts/demo.mjs","member":"node scripts/member.mjs","verify":"node scripts/verify.mjs","test":"node --test tests/*.test.mjs"}
 }

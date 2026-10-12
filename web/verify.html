@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>一起来麦 · 本机只读验证</title>
+  <style>
+    :root{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:#26483b;background:#f5f5ec;color-scheme:light}
+    *{box-sizing:border-box}body{margin:0;padding:36px 18px}main{max-width:590px;margin:0 auto;background:#fffefa;border:1px solid #d9dfcd;border-radius:20px;padding:32px}
+    .eyebrow{font-size:12px;letter-spacing:2px;color:#698255}h1{font-size:30px;line-height:1.35;margin:15px 0}p{font-size:15px;line-height:1.8;color:#586950}
+    .notice{background:#eef3df;padding:14px 16px;border-radius:12px}label{display:block;font-weight:600;margin:25px 0 10px}input{width:100%;padding:14px;font:inherit;border:1px solid #b7c49f;border-radius:10px;background:#fff}
+    button{width:100%;padding:14px;margin-top:15px;border:0;border-radius:10px;background:#395d34;color:#fff;font:600 16px inherit;cursor:pointer}button:disabled{opacity:.6;cursor:wait}
+    .status{padding:15px 0;font-weight:600;min-height:55px}.small{font-size:12px;color:#7a866f}ul{padding-left:22px;line-height:1.9;font-size:14px}li{overflow-wrap:anywhere}
+    @media(max-width:450px){body{padding:16px 12px}main{padding:23px}h1{font-size:26px}}
+  </style>
+  <script type="module" src="/verify.js"></script>
+</head>
+<body><main>
+  <span class="eyebrow">AGENT TOGETHER · 本机</span>
+  <h1>为一起来麦，完成一次真实只读验证。</h1>
+  <p>参赛作品需要真实使用麦当劳 MCP。本页验证新项目自己的连接与只读工具，补上这一步；多人账号比价、下单和支付仍分别标注验证范围。</p>
+  <p class="notice">仅查询近期历史、优惠券与积分。不创建订单、不支付、不领券、不消费积分。真实历史只在本次请求内处理，不显示或保存实际餐品、数量、订单和账号信息。</p>
+  <form id="verify-form">
+    <label for="token-input">麦当劳 MCP Token</label>
+    <input id="token-input" type="password" maxlength="4096" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="由你自己粘贴，只用于这次本机验证" required>
+    <button id="verify-button" type="submit">开始只读验证</button>
+  </form>
+  <div id="status" class="status" role="status" aria-live="polite">尚未验证。</div>
+  <ul id="checks"></ul>
+  <p class="small">提交后立即清空密码框；Token 只从本机服务发往官方 MCP，不进入发起人服务、浏览器存储、日志或验证记录。记录只包含工具成功状态、时间和摘要处理成功标志。</p>
+</main></body>
+</html>
