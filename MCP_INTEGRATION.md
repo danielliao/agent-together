@@ -38,4 +38,4 @@
 
 另有 68 项本地自动测试，包含协议 stub、历史合成样例、分账、身份、确认、防重与验证页边界。公开项目仅放虚构数据，没有成员 Token 或真实订单；未沿用「麦麦小剧场」的联调记录作为本项目证据。
 
-`CONTEST_DECLARATION.md` 为活动官方原文，保留原权利；发布源代码不等于已经报名或满足真实 MCP 使用审核。
+`CONTEST_DECLARATION.md` 为活动官方原文，保留原权利。已于 2026 年 10 月 12 日 10:37（北京时间）提交[参赛申请 #485](https://github.com/M-China/mcd-developer-innovation-challenge/issues/485)，等待官方确认；源码发布和本次验证不替代官方审核。
